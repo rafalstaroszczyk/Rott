@@ -50,7 +50,7 @@ def f(x, y):
 
 def main():
     global steps
-    steps = 1000 
+    steps = 1000000
     x, y = runge_kutta(0, (np.pi, 1, 0, 0), 0.00001, steps, 4, f)
     plt.plot(x, y[0,:])
     plt.plot(x, y[1,:])
