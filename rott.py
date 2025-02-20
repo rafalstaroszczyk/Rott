@@ -25,15 +25,15 @@ def runge_kutta(x_start, y_start, h, no_of_steps, size, f):
 
 
 def f(x, y):
-    a = 1
-    b = 1
-    c = 1
-    mc = 1
-    mt = 1
-    ic = 2
-    it = 2
-    g = 1
-    beta0 = np.pi/2
+    # a = 1
+    # b = 1
+    # c = 1
+    # mc = 1
+    # mt = 1
+    # ic = 2
+    # it = 2
+    # g = 1
+    # beta0 = np.pi/2
     alpha = y[0]
     alpha_der = y[1]
     gamma = y[2]
@@ -49,9 +49,12 @@ def f(x, y):
 
 
 def main():
-    global steps
-    steps = 1000000
-    x, y = runge_kutta(0, (np.pi, 1, 0, 0), 0.00001, steps, 4, f)
+    parametry = np.loadtxt("parametry.txt")
+    global a, b, c, mc, mt, ic, it, g, beta0, steps
+    a, b, c, mc, mt, ic, it, g, beta0, t0, alpha0, alpha_der0, gamma0, gamma_der0, step_size, steps, ilosc_rown, anim_freq = np.loadtxt("parametry.txt")
+    steps = int(steps)
+    ilosc_rown = int(ilosc_rown)
+    x, y = runge_kutta(t0, (alpha0, alpha_der0, gamma0, gamma_der0), step_size, steps, ilosc_rown, f)
     plt.plot(x, y[0,:])
     plt.plot(x, y[1,:])
     plt.plot(x, y[2,:])
