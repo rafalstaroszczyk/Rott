@@ -16,8 +16,8 @@ def main():
                      1,         # alpha_der0
                      0,         # gamma0
                      0,         # gamma_der0
-                     0.001,     # step_size
-                     100000,    # steps
+                     0.00001,   # step_size
+                     1000000,   # steps
                      4,         # ilosc_rown
                      960        # anim_freq
                      ])
